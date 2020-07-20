@@ -5,12 +5,16 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class DataServiceService {
-  private globaldatabygit = "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_daily_reports/07-19-2020.csv"
+  private globaldatabygit = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/07-19-2020.csv"
+  private dailydata = "https://api.covid19api.com/summary"
   constructor(private http:HttpClient) { }
 
   getGlobalData(){
-    return this.http.get(this.globaldatabygit).pipe(map(result=>{
-      console.log("from service   "+result);
+    return this.http.get(this.globaldatabygit,{responseType:'text'}).pipe(map(result=>{
+      return result;
     }))
+  }
+  getGlobalDatabyJson(){
+    return this.http.get(this.dailydata)
   }
 }
