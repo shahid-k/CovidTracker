@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import {SuiModule} from 'ng2-semantic-ui';
 import {HttpClientModule} from '@angular/common/http'
 
