@@ -13,7 +13,9 @@ export class HomeComponent implements OnInit {
   totalDeaths = 0;
   GlobalStat;
   CountryStat;
-  labels_top10 = new Array('United States of America', 'Brazil', 'India', 'Russian Federation', 'South Africa', 'Peru', 'Mexico', 'Chile', 'United Kingdom', 'Iran, Islamic Republic of');
+  labels_countries = new Array();
+  labels_cases = new Array();
+  labels_top10 = new Array('United States of America', 'Brazil', 'India', 'Russian Federation', 'South Africa', 'Peru', 'Mexico', 'Chile', 'United Kingdom', 'Iran, Islamic Republic of','Spain','Pakistan','Saudi Arabia','Italy','Colombia','Turkey','Turkey','Germany');
   data = new Array();
   constructor(private GlobalData: DataServiceService) { }
 
@@ -34,11 +36,10 @@ export class HomeComponent implements OnInit {
       });
     });
 
-    console.log(this.totalConfirmed-(this.data.reduce((a, b) => a + b, 0)))
+    console.log(this.totalConfirmed - (this.data.reduce((a, b) => a + b, 0)))
 
     console.log(this.data);
     console.log(this.labels_top10);
-
 
     var myChart = new Chart("myChart", {
       type: 'pie',
@@ -47,28 +48,44 @@ export class HomeComponent implements OnInit {
         datasets: [{
           data: this.data,
           backgroundColor: [
-            'rgba(255, 99, 132)',
-            'rgba(54, 162, 235)',
+            'rgba(0,150,57,0.7)',
+            'rgba(218,41,28,0.7)',
             'rgba(255, 206, 86)',
-            'rgba(75, 192, 192)',
-            'rgba(153, 102, 255)',
-            'rgba(255, 159, 64)',
-            'rgba(70,130,180)',
+            'rgba(0,0,0,0.8)',
+            'rgba(255,143,28,0.7)',
+            'rgba(200,16,46,0.8)',
+            'rgba(0,122,51,0.7)',
             'rgba(147,112,219)',
             'rgba(188,143,143)',
-            'rgba(0,206,209)'
+            'rgba(0,206,209)',
+            'rgba(216,191,216)',
+            'rgba(30,144,255)',
+            'rgba(144,238,144)',
+            'rgba(128,128,0)',
+            'rgba(75,0,130)',
+            'rgba(250,235,215)',
+            'rgba(233,150,122)',
+            'rgba(178, 34, 52)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
+            'rgba(0,150,57, 1)',
+            'rgba(218,41,28, 1)',
             'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(70,130,180)',
+            'rgba(0,0,0, 1)',
+            'rgba(255,143,28, 1)',
+            'rgba(200,16,46, 1)',
+            'rgba(0,122,51,1)',
             'rgba(147,112,219)',
             'rgba(188,143,143)',
-            'rgba(0,206,209)'
+            'rgba(0,206,209)',
+            'rgba(216,191,216)',
+            'rgba(30,144,255)',
+            'rgba(144,238,144)',
+            'rgba(128,128,0)',
+            'rgba(75,0,130)',
+            'rgba(250,235,215)',
+            'rgba(233,150,122)',
+            'rgba(178, 34, 52)'
           ]
         }]
       }

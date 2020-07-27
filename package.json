@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.14",
     "chart.js": "^2.9.3",
     "fomantic-ui": "^2.8.6",
+    "mapbox-gl": "^1.11.1",
     "natives": "^1.1.6",
     "ng2-semantic-ui": "^0.9.7",
     "ngx-bootstrap": "^5.6.1",

@@ -1,0 +1,27 @@
+<div class="row" style="margin: 5em;">
+    <div class="col">
+        <div class="container-fluid">
+            <div class="ui unstackable items">
+                <div class="item" *ngFor="let data of newsDataObj">
+                    <div class="image">
+                        <img src="{{data['urlToImage']}}">
+                    </div>
+                    <div class="content">
+                        <a class="header" href="{{data['url']}}">{{data['title']}}</a>
+                        <div class="meta">
+                            <span>{{data['author']}}</span>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                        <div class="extra">
+                            {{data['description']}}
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+
+            </div>
+        </div>
+    </div>
+</div>
